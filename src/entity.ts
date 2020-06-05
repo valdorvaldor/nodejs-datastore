@@ -939,6 +939,9 @@ export namespace entity {
     const MAX_DATASTORE_VALUE_LENGTH = 1500;
     if (Array.isArray(entities)) {
       for (const entry of entities) {
+        if( entry === null){
+            continue;
+        }
         if (entry.name && entry.value) {
           if (
             is.string(entry.value) &&
